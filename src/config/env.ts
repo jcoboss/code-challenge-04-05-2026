@@ -1,5 +1,13 @@
 import { z } from 'zod';
 
+// process.loadEnvFile() is Node.js 20.12+ native — no dotenv needed.
+// Skip silently if .env is absent (Docker / CI inject vars directly).
+try {
+  process.loadEnvFile();
+} catch {
+  // .env not present — environment variables must be injected externally
+}
+
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   PORT: z.coerce.number().int().positive().default(3000),
