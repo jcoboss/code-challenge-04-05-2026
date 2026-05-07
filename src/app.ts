@@ -1,8 +1,8 @@
 import express from 'express';
 import helmet from 'helmet';
 import { rateLimit } from 'express-rate-limit';
-import { pinoHttp } from 'pino-http';
-import { logger } from './lib/logger.js';
+//import { pinoHttp } from 'pino-http';
+//import { logger } from './lib/logger.js';
 import { correlationIdMiddleware } from './middleware/correlationId.middleware.js';
 import { errorMiddleware } from './middleware/error.middleware.js';
 import { healthRouter } from './modules/health/health.router.js';
@@ -27,7 +27,7 @@ app.use(
 );
 
 // HTTP request logging
-app.use(pinoHttp({ logger }));
+//app.use(pinoHttp({ logger }));
 
 // Body parsing
 app.use(express.json());

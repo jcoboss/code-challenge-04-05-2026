@@ -1,7 +1,7 @@
 import { STATUS_CODES } from 'node:http';
 import type { NextFunction, Request, Response } from 'express';
 import { AppError } from '../errors/AppError.js';
-import { logger } from '../lib/logger.js';
+//import { logger } from '../lib/logger.js';
 
 export function errorMiddleware(
   err: unknown,
@@ -20,7 +20,7 @@ export function errorMiddleware(
     return;
   }
 
-  logger.error({ err }, 'Unhandled error');
+  console.log({ err }, 'Unhandled error');
 
   res.status(500).json({
     statusCode: 500,
