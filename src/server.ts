@@ -1,25 +1,25 @@
 import { createServer } from 'node:http';
 import { app } from './app.js';
 import { env } from './config/env.js';
-//import { logger } from './lib/logger.js';
+import { logger } from './lib/logger.js';
 import { prisma } from './lib/prisma.js';
 
 const server = createServer(app);
 
 server.listen(env.PORT, () => {
-  console.log({ port: env.PORT, env: env.NODE_ENV }, 'Server started');
+  logger.info({ port: env.PORT, env: env.NODE_ENV, msg: 'Server started' });
 });
 
 async function shutdown(signal: string): Promise<void> {
-  console.log({ signal }, 'Shutdown signal received — closing server');
+  logger.warn({ signal, msg: 'Shutdown signal received — closing server' });
 
   server.close(async () => {
     try {
       await prisma.$disconnect();
-      console.log('Database disconnected — process exiting cleanly');
+      logger.info('Database disconnected — process exiting cleanly');
       process.exit(0);
     } catch (err) {
-      console.log({ err }, 'Error during shutdown');
+      logger.error({ err, msg: 'Error during shutdown' });
       process.exit(1);
     }
   });

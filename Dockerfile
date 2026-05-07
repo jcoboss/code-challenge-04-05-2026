@@ -25,6 +25,9 @@ RUN npm ci --omit=dev && npx prisma generate
 
 COPY --from=builder /app/dist ./dist
 
+# Create logs directory and grant write access to the non-root node user
+RUN mkdir -p logs && chown node:node logs
+
 EXPOSE 3000
 
 USER node
