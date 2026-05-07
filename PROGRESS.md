@@ -35,10 +35,10 @@
 
 ## Phase 3: Core Development
 - [ ] 3.1 Auth Layer — JWT strategy with Argon2 password hashing and middleware for protected routes
-- [ ] 3.2 CRUD — User, Project, Task services with full business logic
-- [ ] 3.3 Prisma Transactions — Use transactions for multi-table operations
-- [ ] 3.4 Zod Sanitizer Middleware — Validate and strip unknown properties from `req.body` and `req.params`
-- [ ] 3.5 Pagination — Standardize cursor or offset-based pagination for all list endpoints
+- [x] 3.2 CRUD — User, Project, Task services with full business logic
+- [x] 3.3 Prisma Transactions — Use transactions for multi-table operations
+- [x] 3.4 Zod Sanitizer Middleware — Validate and strip unknown properties from `req.body` and `req.params`
+- [x] 3.5 Pagination — Standardize cursor or offset-based pagination for all list endpoints
 - [ ] 3.6 Security Middleware — Rate limiting + security headers (Helmet)
 
 ---
