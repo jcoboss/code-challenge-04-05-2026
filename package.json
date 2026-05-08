@@ -8,6 +8,7 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "start": "node --env-file=.env dist/server.js",
+    "db:seed": "tsx prisma/seed.ts",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "vitest"
@@ -33,5 +34,8 @@
     "typescript": "^5.8.0",
     "typescript-eslint": "^8.0.0",
     "vitest": "^3.0.0"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }

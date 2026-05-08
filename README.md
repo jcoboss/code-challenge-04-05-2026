@@ -64,7 +64,10 @@ docker compose up db -d
 # 4. Run migrations
 npx prisma migrate dev
 
-# 5. Start dev server
+# 5. (Optional) Seed demo data — idempotent, safe to re-run
+npm run db:seed
+
+# 6. Start dev server
 npm run dev
 ```
 
@@ -81,6 +84,7 @@ docker compose up --build
 | `npm run dev`    | Start dev server with hot-reload (tsx)   |
 | `npm run build`  | Compile TypeScript → `dist/`             |
 | `npm start`      | Run compiled production server           |
+| `npm run db:seed`| Seed demo data (idempotent)              |
 | `npm run lint`   | Run ESLint                               |
 | `npm run lint:fix` | Run ESLint with auto-fix               |
 | `npm test`       | Run Vitest test suite                    |

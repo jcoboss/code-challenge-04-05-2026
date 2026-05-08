@@ -12,7 +12,7 @@
 - **Testing:** Vitest (Unit + E2E)
 - **Infrastructure:** Docker & Docker Compose
 - **Security:** Argon2, JWT, Helmet, Rate Limiting
-- **Logging:** Pino
+- **Logging:** Winston
 - **Linting:** ESLint (typescript-eslint)
 
 ---
@@ -34,12 +34,13 @@
 ---
 
 ## Phase 3: Core Development
-- [ ] 3.1 Auth Layer — JWT strategy with Argon2 password hashing and middleware for protected routes
+- [x] 3.1 Auth Layer — JWT strategy with Argon2 password hashing and middleware for protected routes
 - [x] 3.2 CRUD — User, Project, Task services with full business logic
 - [x] 3.3 Prisma Transactions — Use transactions for multi-table operations
 - [x] 3.4 Zod Sanitizer Middleware — Validate and strip unknown properties from `req.body` and `req.params`
 - [x] 3.5 Pagination — Standardize cursor or offset-based pagination for all list endpoints
-- [ ] 3.6 Security Middleware — Rate limiting + security headers (Helmet)
+- [x] 3.6 Security Middleware — Rate limiting + security headers (Helmet)
+- [x] 3.7 Seed Data — Idempotent `prisma/seed.ts` with demo users, projects, and tasks (`npm run db:seed`)
 
 ---
 
